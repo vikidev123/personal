@@ -1,0 +1,257 @@
+ /* Proposal page – cute pastel vibes */
+
+.App {
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Quicksand", system-ui, sans-serif;
+  color: #6b2a4a;
+  overflow: hidden;
+}
+
+.proposal-bg {
+  position: relative;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 20%, #ffe4ee 0%, transparent 55%),
+    radial-gradient(circle at 85% 80%, #fff0f6 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, #ffd9e8 0%, #ffeef4 40%, #fff5fa 100%);
+}
+
+/* ---------- Floating hearts / sparkles ---------- */
+.floaters {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floater {
+  position: absolute;
+  bottom: -40px;
+  animation: floatUp linear infinite;
+  opacity: 0.85;
+  filter: drop-shadow(0 2px 4px rgba(255, 105, 149, 0.25));
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-55vh) translateX(20px) rotate(15deg);
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-10px) rotate(-10deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- Card / main content ---------- */
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1.25rem;
+  text-align: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 2px dashed #ffb3cc;
+  border-radius: 36px;
+  padding: 2.5rem 2rem 2.75rem;
+  max-width: 640px;
+  width: 100%;
+  box-shadow:
+    0 20px 50px -20px rgba(255, 105, 149, 0.35),
+    0 0 0 6px rgba(255, 255, 255, 0.5);
+  animation: cardPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes cardPop {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bunny-wrap {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bunnyBob 3.5s ease-in-out infinite;
+}
+
+@keyframes bunnyBob {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-8px) rotate(1.5deg); }
+}
+
+.title {
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: clamp(2.75rem, 7vw, 4.25rem);
+  color: #d13b7a;
+  line-height: 1.05;
+  margin: 0.25rem 0 0.5rem;
+  text-shadow: 0 2px 0 #fff, 0 6px 14px rgba(209, 59, 122, 0.22);
+}
+
+.subtitle {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  color: #a04872;
+  margin: 0 0 2rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Buttons ---------- */
+.btn-row {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 64px;
+}
+
+.btn {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.95rem 2.25rem;
+  border-radius: 9999px;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+  letter-spacing: 0.02em;
+  outline: none;
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 4px rgba(255, 182, 210, 0.75);
+}
+
+.btn-yes {
+  background: linear-gradient(135deg, #ff6fa5 0%, #ff90c0 100%);
+  color: #fff;
+  box-shadow: 0 10px 24px -8px rgba(255, 111, 165, 0.7);
+}
+
+.btn-yes:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 16px 30px -10px rgba(255, 111, 165, 0.85);
+}
+
+.btn-no {
+  background: #fff0f6;
+  color: #c44a7a;
+  border: 2px solid #ffc2d8;
+  box-shadow: 0 6px 16px -6px rgba(255, 150, 190, 0.4);
+}
+
+.btn-no:hover {
+  transform: translateY(-2px);
+  background: #ffe1ec;
+}
+
+/* Floating (dodging) button state */
+.btn-no.floating {
+  position: fixed;
+  z-index: 60;
+  transition:
+    left 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    top 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.2s ease;
+}
+
+.btn-no.floating:hover {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+/* ---------- Yes reveal ---------- */
+.yes-reveal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  animation: yesPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes yesPop {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.yes-msg {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  font-weight: 700;
+  color: #d13b7a;
+  margin: 0;
+}
+
+.yes-sub {
+  font-family: "Quicksand", sans-serif;
+  color: #9e3a68;
+  font-size: 1rem;
+  margin: 0;
+  max-width: 420px;
+}
+
+.restart {
+  margin-top: 1rem;
+  background: transparent;
+  border: none;
+  color: #b84a78;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.restart:hover { color: #8a3358; }
+
+/* ---------- Tiny hint ---------- */
+.hint {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  color: #b97493;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Screen-only little floating big hearts in corners */
+.big-heart {
+  position: fixed;
+  font-size: 2rem;
+  color: #ffb3cc;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+  animation: wobble 6s ease-in-out infinite;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: translate(0,0) rotate(-10deg); }
+  50%      { transform: translate(10px,-10px) rotate(10deg); }
+}
