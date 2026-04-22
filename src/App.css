@@ -71,7 +71,7 @@
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 2px dashed #ffb3cc;
+  border: 2px dashed #B3D8FF;
   border-radius: 36px;
   padding: 2.5rem 2rem 2.75rem;
   max-width: 640px;
@@ -106,7 +106,7 @@
   font-family: "Dancing Script", cursive;
   font-weight: 700;
   font-size: clamp(2.75rem, 7vw, 4.25rem);
-  color: #d13b7a;
+  color: #3B79D1;
   line-height: 1.05;
   margin: 0.25rem 0 0.5rem;
   text-shadow: 0 2px 0 #fff, 0 6px 14px rgba(209, 59, 122, 0.22);
@@ -116,7 +116,7 @@
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
   font-size: clamp(0.95rem, 2.2vw, 1.1rem);
-  color: #a04872;
+  color: #4870A0;
   margin: 0 0 2rem;
   letter-spacing: 0.02em;
 }
@@ -152,7 +152,7 @@
 }
 
 .btn-yes {
-  background: linear-gradient(135deg, #ff6fa5 0%, #ff90c0 100%);
+  background: linear-gradient(135deg, #6FD1FF 0%, #90D8FF 100%);
   color: #fff;
   box-shadow: 0 10px 24px -8px rgba(255, 111, 165, 0.7);
 }
@@ -163,15 +163,15 @@
 }
 
 .btn-no {
-  background: #fff0f6;
-  color: #c44a7a;
-  border: 2px solid #ffc2d8;
+  background: #F0FBFF;
+  color: #4AA1C4;
+  border: 2px solid #C2ECFF;
   box-shadow: 0 6px 16px -6px rgba(255, 150, 190, 0.4);
 }
 
 .btn-no:hover {
   transform: translateY(-2px);
-  background: #ffe1ec;
+  background: #E1F8FF;
 }
 
 /* Floating (dodging) button state */
@@ -206,13 +206,13 @@
   font-family: "Dancing Script", cursive;
   font-size: clamp(1.6rem, 4.5vw, 2.4rem);
   font-weight: 700;
-  color: #d13b7a;
+  color: #3B98D1;
   margin: 0;
 }
 
 .yes-sub {
   font-family: "Quicksand", sans-serif;
-  color: #9e3a68;
+  color: #3A8F9E;
   font-size: 1rem;
   margin: 0;
   max-width: 420px;
@@ -222,7 +222,7 @@
   margin-top: 1rem;
   background: transparent;
   border: none;
-  color: #b84a78;
+  color: #4A9EB8;
   font-family: "Quicksand", sans-serif;
   font-weight: 600;
   cursor: pointer;
@@ -230,13 +230,13 @@
   text-underline-offset: 4px;
 }
 
-.restart:hover { color: #8a3358; }
+.restart:hover { color: #33698A; }
 
 /* ---------- Tiny hint ---------- */
 .hint {
   margin-top: 1.25rem;
   font-size: 0.82rem;
-  color: #b97493;
+  color: #749FB9;
   font-family: "Quicksand", sans-serif;
 }
 
@@ -244,7 +244,7 @@
 .big-heart {
   position: fixed;
   font-size: 2rem;
-  color: #ffb3cc;
+  color: #B3E7FF;
   pointer-events: none;
   z-index: 1;
   opacity: 0.5;
